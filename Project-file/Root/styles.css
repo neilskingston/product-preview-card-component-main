@@ -1,0 +1,181 @@
+/*variables*/
+:root {
+  /*Primary*/
+  --primary-cyan: hsl(158, 36%, 37%);
+  --primary-cream: hsl(30, 38%, 92%);
+  --primary-hover: hsl(158, 36%, 30%);
+  /*neutrals*/
+  --neutral-blue: hsl(212, 21%, 14%);
+  --neutral-gray-blue: hsl(228, 12%, 48%);
+  --neutral-white: hsl(0, 0%, 100%);
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/*PROJECT CONTENT*/
+
+body {
+  background-color: var(--primary-cream);
+  display: grid;
+  place-content: center;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.card {
+  background-color: var(--neutral-white);
+  /*outline: 1px solid limegreen;*/
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 450px;
+  width: 600px;
+  overflow: hidden;
+}
+
+.content {
+  margin: 0px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+
+h1 {
+  color: var(--neutral-gray-blue);
+  letter-spacing: 0.5ch;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+h2 {
+  font-family: 'Fraunces', sans-serif;
+  font-size: 35px;
+  line-height: 1.5ch;
+}
+
+p {
+  color: var(--neutral-gray-blue);
+  font-size: 14px;
+}
+
+.price-container {
+  display: flex;
+  align-items: center;
+}
+
+.price {
+  font-family: 'Fraunces', serif;
+  color: var(--primary-cyan);
+  font-size: 2rem;
+}
+
+.OG-price {
+  color: var(--neutral-gray-blue);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.825rem;
+  text-decoration: line-through;
+  margin-left: 20px;
+}
+
+.button {
+  background-color: var(--primary-cyan);
+  color: var(--neutral-white);
+  border-style: none;
+  border-radius: 10px;
+  padding: 10px 0px;
+}
+
+.button[data-icon="shopping-cart"]::before {
+  content: "";
+  display: inline-block;
+  margin-right: 7px;
+  background-image: url(/images/icon-cart.svg);
+  height: 15px;
+  width: 16px;
+}
+
+.button:hover,
+.button:focus-within {
+  background-color: var(--primary-hover);
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 700px) {
+  .card {
+    display: block;
+    width: 375px;
+    height: auto;
+  }
+
+  h1,
+  h2,
+  p,
+  .button {
+    margin: 18px 0px 0px 0px;
+  }
+
+  h2 {
+    font-size: 33px;
+  }
+
+  .button {
+    margin-bottom: 18px;
+  }
+}
